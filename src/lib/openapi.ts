@@ -66,7 +66,15 @@ const swaggerOptions = {
           type: 'object',
           properties: {
             price: { type: 'number' },
-            quantity: { type: 'number' },
+            quantity: {
+              type: 'number',
+              description:
+                'Total size originally ordered at this price, summed across every resting order at the level. Stable while fills land against it.',
+            },
+            remainingQuantity: {
+              type: 'number',
+              description: 'Portion of quantity that has not been filled yet.',
+            },
             orderCount: { type: 'integer' },
           },
         },
